@@ -1,7 +1,6 @@
 package test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,12 +11,12 @@ public class P1_2SUM {
 
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
-        for (int n = 0; n < nums.length; n++) {
-            int secondNum = target - nums[n];
-            if (map.containsKey(secondNum)) {
-                return new int[]{map.get(secondNum), n};
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
             }
-            map.put(nums[n], n);
+            map.put(nums[i], i);
         }
         return null;
     }
