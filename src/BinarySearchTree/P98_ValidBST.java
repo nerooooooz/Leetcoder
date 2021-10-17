@@ -1,5 +1,6 @@
 package BinarySearchTree;
 
+
 public class P98_ValidBST {
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(2, new TreeNode(1), new TreeNode(3));
@@ -19,18 +20,5 @@ public class P98_ValidBST {
         }
         return isValidBST(node.left, lowerBound, node.val)
                 && isValidBST(node.right, node.val, upperBound);
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
